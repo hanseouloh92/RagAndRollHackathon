@@ -1,7 +1,10 @@
 import streamlit as st # Import python packages
+import os
 #from snowflake.snowpark.context import get_active_session
 
-from snowflake.core import Root
+session = st.connection("snowflake", type="snowflake")
+
+#from snowflake.core import Root
 
 import pandas as pd
 import json
@@ -26,10 +29,11 @@ COLUMNS = [
 ]
 
 #session = get_active_session()
-root = Root(session)                         
+#session = st.connection('snowflake')
+#root = Root(session)                         
 
-svc = root.databases[CORTEX_SEARCH_DATABASE].schemas[CORTEX_SEARCH_SCHEMA].cortex_search_services[CORTEX_SEARCH_SERVICE]
-
+#svc = root.databases[CORTEX_SEARCH_DATABASE].schemas[CORTEX_SEARCH_SCHEMA].cortex_search_services[CORTEX_SEARCH_SERVICE]
+   
 ### Functions
      
 def config_options():
