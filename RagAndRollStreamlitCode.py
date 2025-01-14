@@ -1,5 +1,5 @@
 import streamlit as st # Import python packages
-from snowflake.snowpark.context import get_active_session
+#from snowflake.snowpark.context import get_active_session
 
 from snowflake.core import Root
 
@@ -25,11 +25,11 @@ COLUMNS = [
     "category"
 ]
 
-session = get_active_session()
+#session = get_active_session()
 root = Root(session)                         
 
 svc = root.databases[CORTEX_SEARCH_DATABASE].schemas[CORTEX_SEARCH_SCHEMA].cortex_search_services[CORTEX_SEARCH_SERVICE]
-   
+
 ### Functions
      
 def config_options():
